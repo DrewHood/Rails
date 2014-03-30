@@ -11,6 +11,11 @@ end
 
 def show
   @post = Post.find(params[:id])
+  
+  respond_to do |format|
+    format.html
+    format.xml { render :xml => @posts }
+  end
 end
 
 def index
