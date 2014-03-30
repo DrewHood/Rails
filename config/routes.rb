@@ -1,4 +1,5 @@
 Ruby::Application.routes.draw do
+  use_doorkeeper
   resources :posts
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
