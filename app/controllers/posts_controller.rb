@@ -29,7 +29,15 @@ def index
   respond_to do |format|
     format.html
     format.xml { render :xml => @posts }
+    format.json { render :json => @posts }
   end
+end
+
+def destroy
+  @post = Post.find(params[:id])
+  @post.destroy
+  
+  return head(:no_content)
 end
 
 private
