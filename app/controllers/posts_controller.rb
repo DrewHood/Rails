@@ -6,7 +6,12 @@ end
 def create
  @post = Post.new(post_params)
  @post.save
- redirect_to @post
+ 
+ respond_to do |format|
+   format.html { redirect_to @post }
+   format.xml { render :xml => @post }
+ end
+/ redirect_to @post/
 end
 
 def show
