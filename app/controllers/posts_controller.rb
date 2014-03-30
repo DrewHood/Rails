@@ -14,7 +14,7 @@ def show
   
   respond_to do |format|
     format.html
-    format.xml { render :xml => @posts }
+    format.xml { render :xml => @post }
   end
 end
 
