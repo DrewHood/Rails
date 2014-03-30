@@ -16,7 +16,7 @@ end
 
 def update
   @post = Post.find(params[:id])
-  @post.update(params)
+  @post.update(params[:title])
   
   @info = [params, @post]
   
