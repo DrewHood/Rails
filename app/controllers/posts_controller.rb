@@ -10,6 +10,7 @@ def create
  respond_to do |format|
    format.html { redirect_to @post }
    format.xml { render :xml => @post, :status => :created, :location => @post }
+   format.json { render :json => @post, :status => :created, :location => @post }
  end
 / redirect_to @post/
 end
@@ -25,11 +26,10 @@ def update
     @post.update(:text => params[:text])
   end 
   
-  @info = [params, @post]
-  
   respond_to do |format|
     format.html { redirect_to @post }
-    format.xml { render :xml => @info, :location => @post }
+    format.xml { render :xml => @post, :location => @post }
+    format.json { render :json => @post, :location => @post }
   end
 end
 
@@ -39,6 +39,7 @@ def show
   respond_to do |format|
     format.html
     format.xml { render :xml => @post }
+    format.json { render :json => @post }
   end
 end
 
