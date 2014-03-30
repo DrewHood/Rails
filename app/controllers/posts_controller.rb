@@ -14,6 +14,18 @@ def create
 / redirect_to @post/
 end
 
+def update
+  @post = Post.find(params[:id])
+  @post.update(params)
+  
+  @info = [params, @post]
+  
+  respond_to do |format|
+    format.html { redirect_to @post }
+    format.xml { render :xml => @info, :location => @post }
+  end
+end
+
 def show
   @post = Post.find(params[:id])
   
