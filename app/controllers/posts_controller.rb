@@ -16,7 +16,14 @@ end
 
 def update
   @post = Post.find(params[:id])
-  @post.update(:title => params[:title])
+  
+  if params[:title] != NULL
+    @post.update(:title => params[:title])
+  end
+  
+  if params[:text] != NULL
+    @post.update(:text => params[:text])
+  end 
   
   @info = [params, @post]
   
