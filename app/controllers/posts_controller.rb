@@ -17,11 +17,11 @@ end
 def update
   @post = Post.find(params[:id])
   
-  if params[:title] != NULL
+  if params[:title]
     @post.update(:title => params[:title])
   end
   
-  if params[:text] != NULL
+  if params[:text]
     @post.update(:text => params[:text])
   end 
   
