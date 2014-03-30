@@ -9,7 +9,7 @@ def create
  
  respond_to do |format|
    format.html { redirect_to @post }
-   format.xml { render :xml => @post }
+   format.xml { render :xml => @post, :status => :created, :location => @post }
  end
 / redirect_to @post/
 end
