@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  doorkeeper_for :create, :update, :destroy
+  /doorkeeper_for :create, :update, :destroy/
 
 def new
 end
