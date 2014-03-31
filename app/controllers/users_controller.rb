@@ -19,4 +19,19 @@ class UsersController < ApplicationController
     end
   end
   
+  def create
+    @user = User.new(post_params)
+    @user.save
+    
+    respond_to do |format|
+      format.xml { render :xml => @user }
+      format.json { render :json => @user }
+    end
+  end
+  
+  private
+    def post_params
+      params.permit(:name, :username, :password, :user)
+    end
+  
 end
